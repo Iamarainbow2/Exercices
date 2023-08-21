@@ -1,0 +1,83 @@
+body{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+.card1, .card2 {
+    width: 300px;
+    height: 500px;
+    background-color: rgb(250, 61, 23);
+    
+}
+div img{
+width: 74px;
+height: 74px;
+padding: 20px;
+border-radius: 20px;
+
+}
+.small-input {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    
+    
+}
+.big-input {
+    width: 150px;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 50px;
+    margin: 20px;
+}
+.button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pink {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    gap: 40px;
+}
+.image {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+div button {
+    background-color: blue;
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+}
+div input {
+    background-color: green;
+}
+
+#pink1, #pink2 {
+    background-color: pink;
+    width: 60px;
+    height: 60px;
+
+}
+
+.small-input input {
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.big-input input {
+    border-radius: 20px;
+}
+
+.card2 {
+   
+}
