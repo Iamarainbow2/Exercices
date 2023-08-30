@@ -1,0 +1,28 @@
+.sidebar {
+    margin: 0px;
+    background-color: #F5F5F5;
+    width: 200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.sidebar-list {
+    flex: 1;
+    color: red;
+    
+
+}
+body {
+    margin: 0;
+}
+.sidebar-list a {
+    color: #2b2b2b;
+
+}
+.sidebar-list a:hover {
+    color: #2b2bb2;
+    transition: 0.3ms;
+
+}
