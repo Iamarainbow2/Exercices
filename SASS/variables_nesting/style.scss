@@ -1,1 +1,45 @@
 
+$color-primary: red;
+$color-tertiary: green;
+
+.exercise {
+border: 1px solid $color-primary;
+
+    .exercise-title {
+        color: $color-tertiary;
+    }
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    border: 2px $color-primary solid;
+    padding: 10px;
+    h1 {
+        text-decoration: underline;
+        color: $color-tertiary;
+        justify-content: center;
+        display: flex;
+    
+    }
+    section {
+        display: flex;
+        flex-direction: row;
+        
+    article {
+        border: 1px solid;
+        border-color: $color-tertiary;
+        overflow: hidden;
+        padding: 20px;
+        
+        &:nth-child(odd) {
+            color: lighten(complement(mix($color-tertiary, $color-primary)),10%);
+
+        }
+        &:nth-child(even) {
+            color: $color-primary;
+        }
+    
+    }
+    }
+}

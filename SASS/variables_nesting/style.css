@@ -1,0 +1,37 @@
+.exercise {
+  border: 1px solid red;
+}
+.exercise .exercise-title {
+  color: green;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  border: 2px red solid;
+  padding: 10px;
+}
+div h1 {
+  text-decoration: underline;
+  color: green;
+  justify-content: center;
+  display: flex;
+}
+div section {
+  display: flex;
+  flex-direction: row;
+}
+div section article {
+  border: 1px solid;
+  border-color: green;
+  overflow: hidden;
+  padding: 20px;
+}
+div section article:nth-child(odd) {
+  color: #005ab3;
+}
+div section article:nth-child(even) {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
