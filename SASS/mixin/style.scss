@@ -1,0 +1,50 @@
+
+$color-primary: red;
+$color-tertiary: green;
+html { font-size: 24px; }
+
+@mixin article-card($color, $border-color) {
+    color: $color;
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid $border-color;
+    display: flex;
+} 
+  section.second {
+        
+     article {
+        justify-content: center;
+        margin-top: 10px;
+        @include article-card($color-tertiary, blue)
+    }
+}
+div {
+    flex-direction: column;
+    @include article-card($color-tertiary, $color-primary);
+    h1 {
+        text-decoration: underline;
+        justify-content: center;
+        display: flex;
+    
+    }
+    section.primary {
+        display: flex;
+        flex-direction: row;
+        
+     article {
+        border: 1px solid $color-tertiary;
+        overflow: hidden;
+        padding: 20px;
+        
+        &:nth-child(odd) {
+            color: lighten(complement(mix($color-tertiary, $color-primary)),10%);
+
+        }
+        &:nth-child(even) {
+            color: $color-primary;
+        }
+    
+    }
+    }
+    
+    }
