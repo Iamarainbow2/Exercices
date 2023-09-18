@@ -1,0 +1,50 @@
+/* styles.scss */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.container .form {
+  display: flex;
+  flex-direction: column;
+}
+.container .form label {
+  margin-bottom: 5px;
+}
+.container .form input, .container .form button {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+.container .form button {
+  cursor: pointer;
+}
+.container .carList {
+  margin-top: 20px;
+}
+.container .carList ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+.container .carList li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  border: solid black 2px;
+  padding: 10px;
+}
+.container .carList li button {
+  background-color: rgb(0, 101, 3);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
