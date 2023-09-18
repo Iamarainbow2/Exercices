@@ -1,27 +1,25 @@
 
 $color-primary: red;
 $color-tertiary: green;
-html { font-size: 24px; }
 
-@function rem($font-size: 16px) {
-  $font-size: font-size
-  $fontRem: $[calc($font-size/16px)];
 
-@return ($fontRem);
-}
+@function convertRem($value-in-pixels) {
+    @return $value-in-pixels / 16px + rem;
+  }
+  html { font-size: convertRem(16px); }
 
 @mixin article-card($color, $border-color) {
     color: $color;
-    font-size: 24px;
-    padding: 10px;
-    border: 1px solid $border-color;
+    font-size: convertRem(16px);
+    padding: convertRem(10px);
+    border: convertRem(1px) solid $border-color;
     display: flex;
 } 
   section.second {
         
      article {
         justify-content: center;
-        margin-top: 10px;
+        margin-top: convertRem(10px);
         @include article-card($color-tertiary, blue)
     }
 }
@@ -41,7 +39,7 @@ div {
      article {
         border: 1px solid $color-tertiary;
         overflow: hidden;
-        padding: 20px;
+        padding: convertRem(20px);
         
         &:nth-child(odd) {
             color: lighten(complement(mix($color-tertiary, $color-primary)),10%);

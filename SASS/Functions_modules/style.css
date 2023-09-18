@@ -1,17 +1,44 @@
-/* Error: expected ";".
- *   ,
- * 8 |   $fontRem: $[calc($font-size/16px)];
- *   |           ^
- *   '
- *   style.scss 8:11  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a   \2577 \a 8 \2502    $fontRem: $[calc($font-size/16px)];\a   \2502            ^\a   \2575 \a   style.scss 8:11  root stylesheet';
+html {
+  font-size: 1rem;
 }
+
+section.second article {
+  justify-content: center;
+  margin-top: 0.625rem;
+  color: green;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid blue;
+  display: flex;
+}
+
+div {
+  flex-direction: column;
+  color: green;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid red;
+  display: flex;
+}
+div h1 {
+  text-decoration: underline;
+  justify-content: center;
+  display: flex;
+}
+div section.primary {
+  display: flex;
+  flex-direction: row;
+}
+div section.primary article {
+  border: 1px solid green;
+  overflow: hidden;
+  padding: 1.25rem;
+}
+div section.primary article:nth-child(odd) {
+  color: #005ab3;
+}
+div section.primary article:nth-child(even) {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
