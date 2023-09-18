@@ -1,0 +1,50 @@
+html {
+  font-size: 1rem;
+}
+
+section.second article {
+  justify-content: center;
+  margin-top: 0.625rem;
+  color: green;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid blue;
+  display: flex;
+}
+
+div {
+  color: green;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid red;
+  display: flex;
+  flex-direction: column;
+}
+div h1, div h2 {
+  text-decoration: underline;
+  justify-content: center;
+  display: flex;
+}
+div h2 {
+  border: solid 1px red;
+  padding: 1rem;
+  margin: 0.625rem auto;
+  text-decoration: none;
+}
+div section.primary {
+  display: flex;
+  flex-direction: row;
+}
+div section.primary article {
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid green;
+}
+div section.primary article:nth-child(odd) {
+  color: #005ab3;
+}
+div section.primary article:nth-child(even) {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

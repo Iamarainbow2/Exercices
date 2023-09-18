@@ -1,0 +1,66 @@
+
+$color-primary: red;
+$color-tertiary: green;
+
+
+@function convertRem($value-in-pixels) {
+    @return $value-in-pixels / 16px + rem;
+  }
+  html { font-size: convertRem(16px); }
+
+@mixin article-card($color, $border-color) {
+    color: $color;
+    font-size: convertRem(16px);
+    padding: convertRem(10px);
+    border: convertRem(1px) solid $border-color;
+    display: flex;
+} 
+  section {
+   &.second {
+        
+     article {
+        justify-content: center;
+        margin-top: convertRem(10px);
+        @include article-card($color-tertiary, blue)
+    }
+  }  
+}
+div {
+    
+    @include article-card($color-tertiary, $color-primary);
+    flex-direction: column;
+    h1 {
+        text-decoration: underline;
+        justify-content: center;
+        display: flex;
+    }
+    h2 {
+        @extend h1;
+        border: solid 1px $color-primary;
+        padding: convertRem(16px);
+        margin: convertRem(10px) auto;
+        text-decoration: none;
+
+    }
+    section {
+      &.primary {
+        display: flex;
+        flex-direction: row;
+        
+         article {
+             overflow: hidden;
+             padding: convertRem(20px);
+             border: 1px solid $color-tertiary;
+        
+        &:nth-child(odd) {
+            color: lighten(complement(mix($color-tertiary, $color-primary)),10%);
+
+        }
+        &:nth-child(even) {
+            color: $color-primary;
+        }
+    
+    }
+    }
+    }
+    }
