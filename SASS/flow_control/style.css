@@ -1,0 +1,151 @@
+.fs-1rem {
+  font-size: 1rem;
+}
+
+.fs-2rem {
+  font-size: 2rem;
+}
+
+.fs-3rem {
+  font-size: 3rem;
+}
+
+.secondary div#fs-1 {
+  background-color: #f2f2f2;
+}
+
+.secondary div#fs-2 {
+  background-color: #e6e6e6;
+}
+
+.secondary div#fs-3 {
+  background-color: #d9d9d9;
+}
+
+.secondary div#fs-4 {
+  background-color: #cccccc;
+}
+
+.secondary div#fs-5 {
+  background-color: #bfbfbf;
+}
+
+.secondary div#fs-6 {
+  background-color: #b3b3b3;
+}
+
+.secondary div#fs-7 {
+  background-color: #a6a6a6;
+}
+
+.secondary div#fs-8 {
+  background-color: #999999;
+}
+
+.secondary div#fs-9 {
+  background-color: #8c8c8c;
+}
+
+.secondary div#fs-10 {
+  background-color: gray;
+}
+
+.secondary div#fs-11 {
+  background-color: #737373;
+}
+
+.secondary div#fs-12 {
+  background-color: #666666;
+}
+
+.secondary div#fs-13 {
+  background-color: #595959;
+}
+
+.secondary div#fs-14 {
+  background-color: #4d4d4d;
+}
+
+.secondary div#fs-15 {
+  background-color: #404040;
+}
+
+.secondary div#fs-16 {
+  background-color: #333333;
+}
+
+.secondary div#fs-17 {
+  background-color: #262626;
+}
+
+.secondary div#fs-18 {
+  background-color: #1a1a1a;
+}
+
+.secondary div#fs-19 {
+  background-color: #0d0d0d;
+}
+
+html {
+  font-size: 1rem;
+}
+
+section.third article {
+  justify-content: center;
+  margin-top: 0.625rem;
+  color: green;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid blue;
+  display: flex;
+}
+
+div {
+  color: green;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid red;
+  display: flex;
+  flex-direction: column;
+}
+div h1, div h2 {
+  text-decoration: underline;
+  justify-content: center;
+  display: flex;
+}
+div h2 {
+  border: solid 1px red;
+  padding: 1rem;
+  margin: 0.625rem auto;
+  text-decoration: none;
+}
+div section.primary {
+  display: flex;
+  flex-direction: row;
+}
+div section.primary article {
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid green;
+}
+div section.primary article:nth-child(odd) {
+  color: #005ab3;
+}
+div section.primary article:nth-child(even) {
+  color: red;
+}
+div section.secondary {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+}
+div section div {
+  display: flex;
+  width: calc(5.2631578947% - 10px);
+  margin-top: 0.625rem;
+  align-items: start;
+  justify-content: start;
+  padding: 0rem;
+}
+
+/*# sourceMappingURL=style.css.map */
