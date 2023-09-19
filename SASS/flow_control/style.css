@@ -46,10 +46,6 @@
   background-color: #8c8c8c;
 }
 
-.secondary div#fs-10 {
-  background-color: gray;
-}
-
 .secondary div#fs-11 {
   background-color: #737373;
 }
@@ -141,11 +137,15 @@ div section.secondary {
 }
 div section div {
   display: flex;
-  width: calc(5.2631578947% - 10px);
+  width: 5.2631578947%;
   margin-top: 0.625rem;
   align-items: start;
   justify-content: start;
   padding: 0rem;
+}
+div section div#fs-10 {
+  color: red;
+  background-color: blue;
 }
 
 /*# sourceMappingURL=style.css.map */

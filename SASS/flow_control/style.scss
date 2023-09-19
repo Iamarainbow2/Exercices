@@ -8,10 +8,15 @@ $background-color: white;
 		font-size: #{$i}rem;
 		}
 }
-@for $i from 1 through 19 {
+@for $i from 1 through 9 {
 	.secondary div#fs-#{$i} { 
 		background-color: darken( $background-color, calc(5% * $i))
 		}
+    }
+@for $i from 11 through 19 {
+            .secondary div#fs-#{$i} { 
+                background-color: darken( $background-color, calc(5% * $i))
+                }        
 }
 
 @function convertRem($value-in-pixels) {
@@ -79,11 +84,15 @@ div {
         }
         div {
             display: flex;
-            width: calc((100% / 19) - 10px);
+            width: calc(100% / 19);
             margin-top: convertRem(10px);
             align-items: start;
             justify-content: start;
             padding: 0rem;
+            &#fs-10 {
+                color: $color-primary;
+                background-color: blue;
+            }
 
         }
     }
