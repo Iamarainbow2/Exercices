@@ -3,3 +3,9 @@ const user = {
   name: "John",
   age: 25,
 };
+
+
+localStorage.setItem(user, JSON.stringify(user))
+
+const retrievedUser = JSON.parse(localStorage.getItem('user'));
+console.log(retrievedUser);
