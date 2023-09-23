@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
