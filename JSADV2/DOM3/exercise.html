@@ -20,6 +20,10 @@
 </html>
 
 <script>
-  let labels = document.getElementsByTagName("label").innerHTML;
-  console.log(labels)
+  let labels = document.getElementsByTagName("label");
+  let inputs = document.getElementsByTagName("input");
+
+  for (let i = 0; i < labels.length; i++) {
+    console.log(labels[i].innerHTML + ": " + inputs[i].value);
+      }
 </script>
