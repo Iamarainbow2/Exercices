@@ -1,6 +1,6 @@
-const userName = document.getElementById("userName").value;
-const age = document.getElementById('age').value;
-const konum = document.getElementById('konum').value;
+const userName = document.getElementById("userName");
+const age = document.getElementById('age');
+const konum = document.getElementById('konum');
 console.log(konum);
 
 
@@ -8,7 +8,7 @@ console.log(konum);
 function addUser() {
   let Users = JSON.parse(localStorage.getItem("Users")) || [];
 
-  const user = {username: userName, age: age, location: konum};
+  const user = {username: userName.value, age: age.value, location: konum.value};
   Users.push(user);
 
     localStorage.setItem('Users', JSON.stringify(Users));
@@ -22,6 +22,7 @@ function addUser() {
 
 
 function displayUsers () {
-    let Users = JSON.parse(localStorage.getItem(user)) || {};
+    let Users = JSON.parse(localStorage.getItem("Users")) || {};
+    console.log(Users);
 
 }
