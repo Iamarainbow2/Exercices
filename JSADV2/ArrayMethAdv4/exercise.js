@@ -1,5 +1,6 @@
 function uncompletedNotes(notes) {
-  // ...
+  const completedTasks = notes.flatMap(note => note.todos.filter(todo => todo.done));
+  return console.log(completedTasks);
 }
 
 const notes = [

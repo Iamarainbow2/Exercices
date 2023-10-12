@@ -16,11 +16,6 @@ class Person {
     return new Person(parsedData.id, parsedData.firstName, parsedData.lastName, parsedData.age);
     
   }
-
-  // static fromJson(json) {
-  //   const parsedData = JSON.parse(json);
-  //   return new Person(parsedData.id, parsedData.firstName, parsedData.lastName, parsedData.age);
-  // }
 }
 
 
