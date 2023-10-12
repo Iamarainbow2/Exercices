@@ -1,9 +1,46 @@
 <html>
   <body>
     <div id="container" style="display: flex; align-items: center;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      async function fetchTodo() {
+        const todoId = 4;
+        const url = `https://jsonplaceholder.typicode.com/todos/${todoId}`;
+
+        try {
+          const response = await axios.get(url);
+          return response.data;
+        } catch (error) {
+          console.error('Error fetching Todo:', error.message);
+          throw error;
+        }
+      }
+
+      async function displayTodo() {
+        try {
+          const todo = await fetchTodo();
+
+        
+          const h2 = document.createElement('h2');
+          h2.innerText = todo.title;
+
+       
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.checked = todo.completed;
+
+      
+          const container = document.getElementById('container');
+          container.appendChild(h2);
+          container.appendChild(checkbox);
+        } catch (error) {
+          console.error('Error displaying Todo:', error.message);
+        }
+      }
+
+   
+      displayTodo();
+    </script>
   </body>
 </html>
-
-<script>
-  // code here
-</script>

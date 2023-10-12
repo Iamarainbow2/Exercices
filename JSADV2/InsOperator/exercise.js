@@ -18,13 +18,23 @@ class Circle {
 }
 
 class AreaCalculator {
-  // ...
+  static calculate(figure) {
+    if (figure instanceof Square) {
+      return figure.side ** 2;
+    } else if (figure instanceof Rectangle) {
+      return figure.width * figure.height;
+    } else if (figure instanceof Circle) {
+      return Math.PI * figure.radius ** 2;
+    } else {
+      throw new Error('Unsupported figure type');
+    }
+  }
 }
 
 const square = new Square(4);
 const rectangle = new Rectangle(4, 2);
 const circle = new Circle(5);
 
-console.log(AreaCalculator.calculate(square));
-console.log(AreaCalculator.calculate(rectangle));
-console.log(AreaCalculator.calculate(circle));
+console.log(AreaCalculator.calculate(square));    
+console.log(AreaCalculator.calculate(rectangle)); 
+console.log(AreaCalculator.calculate(circle));   

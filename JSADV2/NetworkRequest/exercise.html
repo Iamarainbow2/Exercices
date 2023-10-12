@@ -1,7 +1,7 @@
 <html>
   <body>
     <div id="container">
-      <form>
+      <form id="todo-form">
         <div>
           <label>Title</label>
           <input type="text" id="todo-title" />
@@ -11,12 +11,35 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button type="submit" id="submit-todo"></button>
+        <button type="submit" id="submit-todo">Submit</button>
       </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      async function createPost(title, completed) {
+        const url = 'https://jsonplaceholder.typicode.com/posts';
+
+        try {
+          const response = await axios.post(url, {
+            title,
+            completed,
+          });
+          console.log('New post created:', response.data);
+        } catch (error) {
+          console.error('Error creating post:', error.message);
+        }
+      }
+
+      const todoForm = document.getElementById('todo-form');
+
+      todoForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const title = document.getElementById('todo-title').value;
+        const completed = document.getElementById('todo-completed').checked;
+
+        await createPost(title, completed);
+      });
+    </script>
   </body>
 </html>
-
-<script>
-  // code here
-</script>
