@@ -14,6 +14,7 @@ class Person {
     const parsedData = JSON.parse(json);
   
     return new Person(parsedData.id, parsedData.firstName, parsedData.lastName, parsedData.age);
+    
   }
 
   // static fromJson(json) {
