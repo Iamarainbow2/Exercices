@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <h1>{hello}</h1>
-      {greed()}
+      {greed(<h1>Mert</h1>)}
     </>
   )
 }
