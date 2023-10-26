@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 export default function Dashboard() {
     const users = JSON.parse(localStorage.getItem('users'));
-    const loggedUser = users.map((user)=> user.isLoggedIn)
+    const loggedUser = users.find((user)=> user.isLoggedIn)
     const userName = loggedUser ? loggedUser.name : null;
     return (
         <div>

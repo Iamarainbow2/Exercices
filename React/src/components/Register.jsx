@@ -4,41 +4,51 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState('');
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+    name: '',
+    isLoggedIn: false
+  })
 
-    const navigate = useNavigate();
-
-    const handleSubmit = () => {
-    
-    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-
-    const emailExists = existingUsers.some((user) => user.email === email);
-    
-    if (!emailExists && email && password && name) {
-      setIsLoggedIn('true');
-      existingUsers.push({ email, password, name, isLoggedIn });
-      localStorage.setItem('users', JSON.stringify(existingUsers));
-
-      
-      navigate('/dashboard');
-    } else {
-      
-      alert("Registration failed. Please check your input or email already exists.");
-    
+  console.log(user)
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setUser((prevUser) => {
+      return {
+        ...prevUser,
+        [name]: value,
+      }
+    })
   }
 
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+
+    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const emailExists = existingUsers.some((item) => item.email === user.email);
+
+    if (!emailExists) {
+      existingUsers.push({...user, isLoggedIn: true});
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+      
+      navigate('/dashboard')
+    } else {
+
+      alert("Registration failed. Please check your input or email already exists.");
+
     }
-    return (
-        <form onSubmit={handleSubmit}>
-            <h1>Register</h1>
-            <input type="mail" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
-            <button type="submit">Register</button>
-            <button>{<Link to="/">Login</Link>}</button>
-        </form >
-    )
+
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <h1>Register</h1>
+      <input name="email" required type="email" placeholder="Email" value={user.email} onChange={handleChange} />
+      <input name="password" required type="password" placeholder="Password" value={user.password} onChange={handleChange} />
+      <input name="name" required type="text" placeholder="Name" value={user.name} onChange={handleChange} />
+      <button type="submit">Register</button>
+      <button>{<Link to="/">Login</Link>}</button>
+    </form >
+  )
 }
