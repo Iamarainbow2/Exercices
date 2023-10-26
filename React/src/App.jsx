@@ -16,7 +16,8 @@ function App() {
           <Route path="/" element={<Login/>} />
           <Route 
             path='/dashboard'
-            render={() => <Dashboard userName={localStorage.getItem('userName')} />}
+            element={<Dashboard/>}
+            render={() => <Dashboard userName={localStorage.getItem('name')} />}
           />
       </Routes>
     </Router>
