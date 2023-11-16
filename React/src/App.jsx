@@ -1,22 +1,27 @@
 import React from 'react';
-import useGithubUser from './Components/useGithubUser';
+import useCurrentLocation from './Components/useCurrentLocation';
 
 const App = () => {
-  const username = 'Iamarainbow2';
-  const { userData, loading, error } = useGithubUser(username);
+  const { currentLocation, loading, error } = useCurrentLocation();
 
+  if (loading) {
+    return <p>Loading current location...</p>;
+  }
+
+  if (error) {
+    return <p>Error fetching current location: {error}</p>;
+  }
+
+  if (!currentLocation) {
+    return null;
+  }
+
+  const { latitude, longitude } = currentLocation;
   return (
     <div>
-      <h1>Github User Information</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {userData && (
-        <div>
-          <img src={userData.avatar_url} alt={`${username}'s avatar`} />
-          <h2>{userData.name}</h2>
-          <p>{userData.login}</p>
-        </div>
-      )}
+      <h1>Current Location</h1>
+      <p>Latitude: {latitude}</p>
+      <p>Longitude: {longitude}</p>
     </div>
   );
 };
