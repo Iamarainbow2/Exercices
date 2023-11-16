@@ -1,8 +1,10 @@
+
 import React from 'react';
 import useCounter from './Components/useCounter';
 const CounterComponent = () => {
   const { count, increment, decrement, reset } = useCounter(0);
 
+const App = () => {
   return (
     <div>
       <p>Count: {count}</p>
