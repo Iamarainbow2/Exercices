@@ -3,7 +3,7 @@
 function MouseClicker({ name }) {
   
   const handleClick = (event) => {
-    //image is in a upper z index than the button, click event handler only runs the most top element so that element will be the image not the button 
+    //My APP does not print buttons name when image is clickled. If you click image console logs image containers name if you click button you get buttons name
 
     const buttonName = event.target.name || event.target.src;
     if (buttonName) {
@@ -18,6 +18,7 @@ function MouseClicker({ name }) {
         <img
           src="https://coursereport-production.imgix.net/uploads/school/logo/1247/original/glifo_develhope.jpeg?w=72&h=72"
           alt="Button Image"
+          name="image"
           style={{ width: '50px', height: '50px', marginLeft: '10px' }}
         />
       </button>
