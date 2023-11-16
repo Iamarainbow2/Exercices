@@ -7,8 +7,12 @@ function TodoList() {
   const addItem = () => {
     if (newItem.trim() !== '') {
       setItems((prevItems) => [...prevItems, newItem]);
-      setNewItem(''); 
+      setNewItem('');
     }
+  };
+
+  const resetItems = () => {
+    setItems([]);
   };
 
   return (
@@ -27,6 +31,7 @@ function TodoList() {
           placeholder="Add new item"
         />
         <button onClick={addItem}>Add</button>
+        <button onClick={resetItems}>Reset</button>
       </div>
     </div>
   );
