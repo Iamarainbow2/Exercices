@@ -1,13 +1,12 @@
 
-import Login from "./Components/Login";
-
+import FocusableInput from "./Components/FocusableInput";
 function App() {
   
 
   return (
     <div>
       
-      <Login />
+      <FocusableInput />
     </div>
   );
 }
