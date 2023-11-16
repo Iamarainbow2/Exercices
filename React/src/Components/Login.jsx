@@ -27,10 +27,15 @@ function Login({ onLogin }) {
     setRememberMe(false);
   };
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    handleLoginClick();
+  };
+
   const isLoginDisabled = !username || !password;
 
   return (
-    <div>
+    <form onSubmit={handleFormSubmit}>
       <label>
         Username:
         <input
@@ -64,14 +69,14 @@ function Login({ onLogin }) {
 
       <br />
 
-      <button onClick={handleLoginClick} disabled={isLoginDisabled}>
+      <button type="submit" disabled={isLoginDisabled}>
         Login
       </button>
 
-      <button onClick={handleResetClick}>
+      <button type="button" onClick={handleResetClick}>
         Reset
       </button>
-    </div>
+    </form>
   );
 }
 
