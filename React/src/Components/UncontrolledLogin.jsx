@@ -1,75 +1,43 @@
-import { useState } from 'react';
 
-function Login({ onLogin }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleRememberChange = (event) => {
-    setRememberMe(event.target.checked);
-  };
-
-  const handleLoginClick = () => {
+function UncontrolledLogin({ onLogin }) {
+  const handleLoginClick = (event) => {
+    event.preventDefault();
+    // For Uncontrolled components we can use Directly from Event Object or Using Refs, for controlled components we can use states.
+    const formData = new FormData(event.target);
+    const username = formData.get('username');
+    const password = formData.get('password');
+    const rememberMe = formData.get('rememberMe') === 'on'; 
     onLogin({ username, password, rememberMe });
   };
 
   const handleResetClick = () => {
-    setUsername('');
-    setPassword('');
-    setRememberMe(false);
   };
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    handleLoginClick();
-  };
-
-  const isLoginDisabled = !username || !password;
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleLoginClick}>
       <label>
         Username:
-        <input
-          type="text"
-          value={username}
-          onChange={handleUsernameChange}
-        />
+        <input type="text" name="username" />
       </label>
 
       <br />
 
       <label>
         Password:
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
+        <input type="password" name="password" />
       </label>
 
       <br />
 
       <label>
         Remember me:
-        <input
-          type="checkbox"
-          checked={rememberMe}
-          onChange={handleRememberChange}
-        />
+        <input type="checkbox" name="rememberMe" />
       </label>
 
       <br />
 
-      <button type="submit" disabled={isLoginDisabled}>
+      <button type="submit">
         Login
       </button>
 
@@ -80,4 +48,4 @@ function Login({ onLogin }) {
   );
 }
 
-export default Login;
+export default UncontrolledLogin;
