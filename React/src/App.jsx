@@ -1,27 +1,16 @@
 import React from 'react';
-import useCurrentLocation from './Components/useCurrentLocation';
+import useCounter from './Components/useCounter';
 
 const App = () => {
-  const { currentLocation, loading, error } = useCurrentLocation();
+  const { count, increment, decrement, reset } = useCounter(0);
 
-  if (loading) {
-    return <p>Loading current location...</p>;
-  }
-
-  if (error) {
-    return <p>Error fetching current location: {error}</p>;
-  }
-
-  if (!currentLocation) {
-    return null;
-  }
-
-  const { latitude, longitude } = currentLocation;
   return (
     <div>
-      <h1>Current Location</h1>
-      <p>Latitude: {latitude}</p>
-      <p>Longitude: {longitude}</p>
+      <h1>Counter App</h1>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };
