@@ -1,14 +1,18 @@
-import React, { useContext } from 'react';
-import LanguageContext from './LanguageContext';
+import { useContext } from 'react'
+import { LanguageContext } from './LanguageContext'
+
+
+
 const Clock = () => {
-  const { language } = useContext(LanguageContext);
-  const time = new Date().toLocaleTimeString(language);
+
+  const language = useContext(LanguageContext)
 
   return (
-    <div>
-      <p>Current time: {time}</p>
+    <div className="clock">
+      <div>Clock</div>
+      <div>{language}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Clock;
+export default Clock

@@ -1,8 +1,11 @@
-import React from 'react';
+import { createContext } from "react";
 
-const LanguageContext = React.createContext({
-  language: 'en',
-  setLanguage: (language) => {},
-});
+export const LanguageContext = createContext(undefined)
 
-export default LanguageContext;
+export function useLanguageContext() {
+  if(LanguageContext === undefined) {
+    throw new Error('Use useLanguageContext within the context provider.')
+  }
+
+  return LanguageContext;
+}
