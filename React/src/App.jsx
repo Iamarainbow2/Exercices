@@ -1,11 +1,10 @@
 
-import TodoList from "./Components/TodoList";
-
+import Welcome from "./Components/Welcome";
 function App() {
   return (
     <div>
-      <h1>My Todo App</h1>
-      <TodoList />
+      
+      <Welcome />
     </div>
   );
 }
