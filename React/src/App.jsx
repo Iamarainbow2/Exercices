@@ -1,13 +1,12 @@
 
-import Clock from "./Components/Clock";
-
+import TodoList from "./Components/TodoList";
 function App() {
   
 
   return (
     <div>
       
-      <Clock />
+      <TodoList />
     </div>
   );
 }

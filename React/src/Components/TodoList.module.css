@@ -1,0 +1,21 @@
+.todo-container {
+  margin-top: 20px;
+}
+
+.todo-item {
+  list-style-type: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=TodoList.module.css.map */
