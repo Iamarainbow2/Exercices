@@ -1,11 +1,10 @@
 
-import Clock from "./Components/Clock";
+import MouseClicker from "./Components/MouseClicker";
 
 function App() {
   return (
     <div>
-      
-      <Clock />
+      <MouseClicker />
     </div>
   );
 }
