@@ -8,7 +8,7 @@ function Welcome(props) {
     return (
       <>
         <h2>Welcome, {firstName}!</h2>
-       <Age age={age}/>
+       {age && <Age age={age}/>}
       </>
     )
     }
