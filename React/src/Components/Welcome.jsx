@@ -3,9 +3,11 @@
 
 function Welcome(props) {
 
+  const { firstName = 'Guest' } = props;
+
     return (
       <>
-        <h2>Welcome, {props.firstName}!</h2>
+        <h2>Welcome, {firstName}!</h2>
       </>
     )
     }
