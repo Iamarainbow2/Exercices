@@ -1,16 +1,12 @@
-import AlertClock from "./Components/AlertClock";
+import Counter from "./Components/Counter";
 
 function App() {
-  const handleButtonClick = () => {
-    const currentTime = new Date().toLocaleTimeString();
-    alert(`Current time is: ${currentTime}`);
-  };
-
-  return (
-    <div>
-      <AlertClock onButtonClick={handleButtonClick} />
-    </div>
-  );
-}
-
-export default App;
+    return (
+      <div>
+        <h1>My React App</h1>
+        <Counter />
+      </div>
+    );
+  }
+  
+  export default App;
