@@ -1,12 +1,24 @@
-import React, { useContext } from 'react';
-import LanguageContext from './LanguageContext';
+// Clock.jsx
+import React, { useEffect, useState } from 'react';
+import { useLanguage } from './LanguageContext';
+
 const Clock = () => {
-  const { language } = useContext(LanguageContext);
-  const time = new Date().toLocaleTimeString(language);
+  const { language } = useLanguage();
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const formattedTime = time.toLocaleTimeString(language);
 
   return (
     <div>
-      <p>Current time: {time}</p>
+      <h2>Current Time:{formattedTime}</h2>
     </div>
   );
 };
