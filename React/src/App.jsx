@@ -1,11 +1,10 @@
 
-import FocusableInput from "./Components/FocusableInput";
-
+import MountedMessageComponent from "./Components/MountedMessageComponent";
 function App() {
   return (
     <div>
 
-      <FocusableInput />
+      <MountedMessageComponent />
      
     </div>
   );
