@@ -4,7 +4,7 @@ import MouseClicker from "./Components/MouseClicker";
 function App() {
   return (
     <div>
-      <MouseClicker />
+      <MouseClicker name='MouseClickler'/>
     </div>
   );
 }
