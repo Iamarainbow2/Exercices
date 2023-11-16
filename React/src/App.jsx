@@ -1,14 +1,12 @@
-import UncontrolledLogin from "./Components/UncontrolledLogin";
+
+import FocusableInput from "./Components/FocusableInput";
 
 function App() {
-  const handleLogin = (userData) => {
-    console.log('Logging in with:', userData);
-  };
-
   return (
     <div>
-      <h1>Login Page</h1>
-      <UncontrolledLogin onLogin={handleLogin} />
+
+      <FocusableInput />
+     
     </div>
   );
 }
