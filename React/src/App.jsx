@@ -1,5 +1,5 @@
 
-import Login from "./Components/Login";
+import Clock from "./Components/Clock";
 
 function App() {
   
@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       
-      <Login />
+      <Clock />
     </div>
   );
 }

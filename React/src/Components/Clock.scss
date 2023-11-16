@@ -1,0 +1,23 @@
+.clock-container {
+    text-align: center;
+    margin: 20px;
+  
+    h2 {
+      color: #336699;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      background-color: #336699;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #004080;
+      }
+    }
+  }
+  
