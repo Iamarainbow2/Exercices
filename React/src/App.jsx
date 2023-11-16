@@ -1,16 +1,18 @@
 import React from 'react';
-import useCounter from './Components/useCounter';
-
+import FilteredList from './Components/FilteredList';
 const App = () => {
-  const { count, increment, decrement, reset } = useCounter(0);
+  const list = [
+    { id: 1, name: 'Alice', age: 25 },
+    { id: 2, name: 'Bob', age: 16 },
+    { id: 3, name: 'Charlie', age: 32 },
+    { id: 4, name: 'David', age: 19 },
+    { id: 5, name: 'Emily', age: 21 },
+  ];
 
   return (
     <div>
-      <h1>Counter App</h1>
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={reset}>Reset</button>
+      <h1>Filtered List</h1>
+      <FilteredList list={list} />
     </div>
   );
 };
