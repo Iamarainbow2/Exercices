@@ -1,18 +1,39 @@
 
-import React from 'react';
-import useCounter from './Components/useCounter';
-const CounterComponent = () => {
-  const { count, increment, decrement, reset } = useCounter(0);
+import useFormInput from "./Components/useFormInput";
+const LoginForm = () => {
+  const { inputs, handleInputChange } = useFormInput();
 
-const App = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    console.log('Form submitted with:', inputs);
+  };
+
   return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={reset}>Reset</button>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={inputs.username}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={inputs.password}
+          onChange={handleInputChange}
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   );
 };
 
-export default CounterComponent;
+export default LoginForm;
