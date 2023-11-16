@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function Login() {
+function Login({ onLogin }) {
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -20,6 +20,15 @@ function Login() {
   const handleRememberChange = (event) => {
     setRememberMe(event.target.checked);
   };
+
+  
+  const handleLoginClick = () => {
+    
+    onLogin({ username, password, rememberMe });
+  };
+
+  
+  const isLoginDisabled = !username || !password;
 
   return (
     <div>
@@ -56,6 +65,13 @@ function Login() {
           onChange={handleRememberChange}
         />
       </label>
+
+      <br />
+
+      
+      <button onClick={handleLoginClick} disabled={isLoginDisabled}>
+        Login
+      </button>
     </div>
   );
 }
