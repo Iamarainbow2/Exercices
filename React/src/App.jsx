@@ -1,4 +1,4 @@
-import Login from "./components/Login";
+import UncontrolledLogin from "./Components/UncontrolledLogin";
 
 function App() {
   const handleLogin = (userData) => {
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <h1>Login Page</h1>
-      <Login onLogin={handleLogin} />
+      <UncontrolledLogin onLogin={handleLogin} />
     </div>
   );
 }
