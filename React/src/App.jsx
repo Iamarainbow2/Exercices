@@ -1,11 +1,12 @@
-
-import Counter from "./Components/Counter";
+import Colors from "./Components/Colors";
 
 function App() {
+  const colorList = ['Red', 'Green', 'Blue', 'Yellow'];
+
   return (
     <div>
-      <h1>Counter App</h1>
-      <Counter initialValue={0} />
+      <h1>Color List</h1>
+      <Colors items={colorList} />
     </div>
   );
 }
