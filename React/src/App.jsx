@@ -1,39 +1,24 @@
+import React from 'react';
+import useGithubUser from './Components/useGithubUser';
 
-import useFormInput from "./Components/useFormInput";
-const LoginForm = () => {
-  const { inputs, handleInputChange } = useFormInput();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-    console.log('Form submitted with:', inputs);
-  };
+const App = () => {
+  const username = 'Iamarainbow2';
+  const { userData, loading, error } = useGithubUser(username);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={inputs.username}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={inputs.password}
-          onChange={handleInputChange}
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <h1>Github User Information</h1>
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {userData && (
+        <div>
+          <img src={userData.avatar_url} alt={`${username}'s avatar`} />
+          <h2>{userData.name}</h2>
+          <p>{userData.login}</p>
+        </div>
+      )}
+    </div>
   );
 };
 
-export default LoginForm;
+export default App;
