@@ -3,7 +3,7 @@ import Counter from "./Components/Counter";
 function App() {
     return (
       <div>
-        <Counter increment={1} initial={22}/>
+        <Counter decrementAmount={2} initialCount={0}/>
       </div>
     );
   }
