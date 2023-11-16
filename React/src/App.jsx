@@ -1,10 +1,10 @@
 
-import MouseClicker from "./Components/MouseClicker";
+import MultiButton from "./Components/MultiButton";
 
 function App() {
   return (
     <div>
-      <MouseClicker name='MouseClickler'/>
+      <MultiButton/>
     </div>
   );
 }
