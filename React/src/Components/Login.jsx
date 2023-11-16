@@ -1,38 +1,36 @@
 import { useState } from 'react';
 
 function Login({ onLogin }) {
-  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
 
-  
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
 
-  
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  
   const handleRememberChange = (event) => {
     setRememberMe(event.target.checked);
   };
 
-  
   const handleLoginClick = () => {
-    
     onLogin({ username, password, rememberMe });
   };
 
-  
+  const handleResetClick = () => {
+    setUsername('');
+    setPassword('');
+    setRememberMe(false);
+  };
+
   const isLoginDisabled = !username || !password;
 
   return (
     <div>
-      
       <label>
         Username:
         <input
@@ -44,7 +42,6 @@ function Login({ onLogin }) {
 
       <br />
 
-      
       <label>
         Password:
         <input
@@ -56,7 +53,6 @@ function Login({ onLogin }) {
 
       <br />
 
-      
       <label>
         Remember me:
         <input
@@ -68,9 +64,12 @@ function Login({ onLogin }) {
 
       <br />
 
-      
       <button onClick={handleLoginClick} disabled={isLoginDisabled}>
         Login
+      </button>
+
+      <button onClick={handleResetClick}>
+        Reset
       </button>
     </div>
   );
