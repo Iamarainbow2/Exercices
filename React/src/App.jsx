@@ -14,5 +14,6 @@ const App = () => {
     </div>
   );
 };
+}
 
 export default CounterComponent;
