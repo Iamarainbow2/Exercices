@@ -3,7 +3,8 @@
 function UncontrolledLogin({ onLogin }) {
   const handleLoginClick = (event) => {
     event.preventDefault();
-    // For Uncontrolled components we can use Directly from Event Object or Using Refs, for controlled components we can use states.
+    //For Standart APIs Using formData with event.target
+    //For Unstandart APIs  direct Access to elements like event.target.elements.username.value 
     const formData = new FormData(event.target);
     const username = formData.get('username');
     const password = formData.get('password');
