@@ -1,14 +1,13 @@
 
 import Container from "./Components/Container";
-function App() {
-  
-  const Hello = "Hello!"
+
+const App = () => {
   return (
-    <div>
-      
-      <Container children={Hello}/>
-    </div>
+    <Container title="Container Title">
+      <h1>TITLE H1</h1>
+      <p>Lorem ipsum Hello</p>
+    </Container>
   );
-}
+};
 
 export default App;
