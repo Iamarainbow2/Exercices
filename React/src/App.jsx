@@ -1,15 +1,9 @@
-import Welcome from "./Components/Welcome"
-
+import AlertClock from "./Components/AlertClock"
 function App() {
 
   return (
     <>
-      <Welcome 
-        age={11}
-        firstName="John"
-      />
-      
-      
+      <AlertClock/>
     </>
   )
   }
