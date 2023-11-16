@@ -1,7 +1,13 @@
+
 import Colors from "./Components/Colors";
 
 function App() {
-  const colorList = ['Red', 'Green', 'Blue', 'Yellow'];
+  const colorList = [
+    { id: 1, name: 'Red' },
+    { id: 2, name: 'Green' },
+    { id: 3, name: 'Blue' },
+    { id: 4, name: 'Yellow' },
+  ];
 
   return (
     <div>
