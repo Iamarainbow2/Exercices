@@ -1,5 +1,5 @@
 
-
+import Age from "./Age";
 
 function Welcome(props) {
 
@@ -8,7 +8,7 @@ function Welcome(props) {
     return (
       <>
         <h2>Welcome, {firstName}!</h2>
-        <p>Your age is {age}</p>
+       <Age age={age}/>
       </>
     )
     }
