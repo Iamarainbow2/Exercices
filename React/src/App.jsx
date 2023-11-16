@@ -1,10 +1,10 @@
 
-import MultiButton from "./Components/MultiButton";
+import InteractiveWelcome from "./Components/InteractiveWelcome";
 
 function App() {
   return (
     <div>
-      <MultiButton/>
+      <InteractiveWelcome />
     </div>
   );
 }
