@@ -1,18 +1,11 @@
 
-import Colors from "./Components/Colors";
+import TodoList from "./Components/TodoList";
 
 function App() {
-  const colorList = [
-    { id: 1, name: 'Red' },
-    { id: 2, name: 'Green' },
-    { id: 3, name: 'Blue' },
-    { id: 4, name: 'Yellow' },
-  ];
-
   return (
     <div>
-      <h1>Color List</h1>
-      <Colors items={colorList} />
+      <h1>My Todo App</h1>
+      <TodoList />
     </div>
   );
 }
