@@ -7,7 +7,7 @@ function TodoList() {
   const addItem = () => {
     if (newItem.trim() !== '') {
       setItems((prevItems) => [...prevItems, newItem]);
-      setNewItem('');
+      setNewItem(''); 
     }
   };
 
