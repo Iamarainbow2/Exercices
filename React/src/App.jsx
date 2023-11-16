@@ -1,10 +1,10 @@
 
-import Welcome from "./Components/Welcome";
+import Counter from "./Components/Counter";
 function App() {
   return (
     <div>
       
-      <Welcome />
+      <Counter />
     </div>
   );
 }
