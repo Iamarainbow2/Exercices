@@ -1,12 +1,20 @@
-
-import Container from "./Components/Container";
+import React from 'react';
+import Clock from './Components/Clock';
+import LanguageWrapper from './Components/language-wrapper';
 
 const App = () => {
   return (
-    <Container title="Container Title">
-      <h1>TITLE H1</h1>
-      <p>Lorem ipsum Hello</p>
-    </Container>
+    <LanguageWrapper>
+      <AppContent />
+    </LanguageWrapper>
+  );
+};
+
+const AppContent = () => {
+  return (
+    <div>
+      <Clock />
+    </div>
   );
 };
 
