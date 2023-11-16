@@ -1,14 +1,16 @@
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './Components/Welcome';
+import Counter from './Components/Counter';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Welcome name="Nameless" />} />
+        <Route path="/" element={<Welcome name="Mehmet" />} />
+        <Route path="/counter" element={<Counter />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 
