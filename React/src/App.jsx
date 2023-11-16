@@ -1,17 +1,12 @@
-import { LanguageContext } from "./Components/LanguageContext";
-import { useState } from "react";
-import Clock from "./Components/Clock";
 
+import GithubUser from "./Components/GithubUser";
 const App = () => {
-	
-  const [language, setLanguage] = useState('en')
-	return (
-		
-			<LanguageContext.Provider value={language}>
-				<Clock />
-			</LanguageContext.Provider>
-		
-	);
+  return (
+    <div>
+      <h1>Github User Information</h1>
+      <GithubUser username="Iamarainbow2" />
+    </div>
+  );
 };
 
 export default App;
