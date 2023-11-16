@@ -1,19 +1,31 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import CounterDisplay from './CounterDisplay';
 
-function Counter(props) {
-    const {initial, increment} = props
-  const [counter, setCounter] = useState(initial);
+function Counter({ initialCount, decrementAmount }) {
+  
+  const [counter, setCounter] = useState(initialCount);
 
-// When using UseState we dont wanna manipulate the value directly, that is why we use UseState. The best practice is using the setter function and if we need the old value we should use an arrow function with oldvalue ((prevCounter) => prevCounter + 1).
-  const handleIncrease = () => {
-    setCounter(counter + increment);
+  
+  const handleIncrement = () => {
+    setCounter((prevCounter) => prevCounter + 1);
+  };
+
+  
+  const handleDecrement = () => {
+    setCounter((prevCounter) => prevCounter - decrementAmount);
+  };
+
+  
+  const handleReset = () => {
+    setCounter(initialCount);
   };
 
   return (
     <div>
-      <CounterDisplay count={counter} />  
-      <button onClick={handleIncrease}>Increment</button>
+      <CounterDisplay count={counter} />
+      <button onClick={handleIncrement}>Increment</button>
+      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
