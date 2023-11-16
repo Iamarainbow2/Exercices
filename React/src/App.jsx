@@ -1,10 +1,10 @@
-
-import InteractiveWelcome from "./Components/InteractiveWelcome";
+import Login from "./components/Login";
 
 function App() {
   return (
     <div>
-      <InteractiveWelcome />
+      <h1>Login Page</h1>
+      <Login />
     </div>
   );
 }
