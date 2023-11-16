@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
-function Counter() {
-  const [counter, setCounter] = useState(0);
+function Counter(props) {
+    const {initial, increment} = props
+  const [counter, setCounter] = useState(initial);
 
 // When using UseState we dont wanna manipulate the value directly, that is why we use UseState. The best practice is using the setter function and if we need the old value we should use an arrow function with oldvalue ((prevCounter) => prevCounter + 1).
   const handleIncrease = () => {
-    setCounter(counter + 1);
+    setCounter(counter + increment);
   };
 
   return (
