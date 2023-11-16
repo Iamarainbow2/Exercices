@@ -1,12 +1,11 @@
-import Hello from "./Components/Hello"
-import Message from "./Components/Message"
+import Welcome from "./Components/Welcome"
 
 function App() {
 
   return (
     <>
-      <Hello/>
-      <Message/>
+      <Welcome firstName="Ahmet"/>
+      
       
     </>
   )
