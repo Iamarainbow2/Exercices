@@ -1,33 +1,13 @@
-<<<<<<< HEAD
-import { LanguageContext } from "./Components/LanguageContext";
-import { useState } from "react";
-import Clock from "./Components/Clock";
 
-const App = () => {
-	
-  const [language, setLanguage] = useState('en')
-	return (
-		
-			<LanguageContext.Provider value={language}>
-				<Clock />
-			</LanguageContext.Provider>
-		
-	);
-};
 
-export default App;
-=======
-
-import LanguageWrapper from './Components/LanguageWrapper';
-import Clock from './Components/Clock';
-
+import GithubUser from "./Components/GithubUser";
 const App = () => {
   return (
-    <LanguageWrapper>
-      <Clock />
-    </LanguageWrapper>
+    <div>
+      <h1>Github User Information</h1>
+      <GithubUser username="Iamarainbow2" />
+    </div>
   );
 };
 
 export default App;
->>>>>>> d3fd2d4bc709940133197edb413155effd0f00e7
