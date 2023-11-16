@@ -1,11 +1,13 @@
-import Counter from "./Components/Counter";
+
+import Clock from "./Components/Clock";
 
 function App() {
-    return (
-      <div>
-        <Counter decrementAmount={2} initialCount={0}/>
-      </div>
-    );
-  }
-  
-  export default App;
+  return (
+    <div>
+      
+      <Clock />
+    </div>
+  );
+}
+
+export default App;
