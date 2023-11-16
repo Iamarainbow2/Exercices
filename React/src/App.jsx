@@ -1,12 +1,12 @@
 
-import FocusableInput from "./Components/FocusableInput";
+import Container from "./Components/Container";
 function App() {
   
-
+  const Hello = "Hello!"
   return (
     <div>
       
-      <FocusableInput />
+      <Container children={Hello}/>
     </div>
   );
 }
