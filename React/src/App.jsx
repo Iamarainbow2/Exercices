@@ -1,11 +1,11 @@
 
-import MountedMessageComponent from "./Components/MountedMessageComponent";
+import Counter from "./Components/Counter";
+
 function App() {
   return (
     <div>
-
-      <MountedMessageComponent />
-     
+      <h1>Counter App</h1>
+      <Counter initialValue={0} />
     </div>
   );
 }
