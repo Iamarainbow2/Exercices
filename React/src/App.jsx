@@ -1,6 +1,4 @@
-import React from 'react';
-import GithubUsers from './Components/GithunUsers';
-
+import GithubUser from "./Components/GithubUser";
 const App = () => {
   return (
     <div>
