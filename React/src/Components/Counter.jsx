@@ -1,5 +1,5 @@
 
-import useCounter from './useCounter';
+import useCounter from "./useCounter";
 
 const Counter = () => {
   const { count, increment, decrement, reset } = useCounter(0);
