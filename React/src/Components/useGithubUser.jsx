@@ -10,22 +10,24 @@ const fetcher = async (url) => {
   return response.json();
 };
 
-const useGithubUser = (username) => {
-  
-  if (username === null) {
-    return {
-      userData: null,
-      loading: false,
-      error: null,
-    };
-  }
+const useGithubUser = (initialUsername) => {
+  const { data, error, mutate } = useSWR(
+    initialUsername ? `https://api.github.com/users/${initialUsername}` : null,
+    fetcher
+  );
 
-  const { data, error } = useSWR(`https://api.github.com/users/${username}`, fetcher);
+  const getUserData = (username) => {
+    
+    if (username) {
+      mutate(`https://api.github.com/users/${username}`);
+    }
+  };
 
   return {
     userData: data,
     loading: !error && !data,
     error,
+    refetch: getUserData,
   };
 };
 
