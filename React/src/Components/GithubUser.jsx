@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
+import useGithubUser from './useGithubUser';
 
 const GithubUser = ({ username }) => {
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const { userData, loading, error } = useGithubUser(username);
+  
+  
 
   useEffect(() => {
     const fetchUserData = async () => {
