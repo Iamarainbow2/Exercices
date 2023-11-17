@@ -29,14 +29,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Welcome name="YourName" />} />
           <Route path="/counter" element={<Counter />} />
-          <Route
-            path="/users"
-            element={<GithubUserList usernames={githubUsernames} />}
-          />
-          <Route
-            path="/users/:username"
-            element={<ShowGithubUser />}
-          />
+          <Route path="/users" element={<GithubUserList usernames={githubUsernames} />}>
+            <Route path=":username" element={<ShowGithubUser />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const GithubUserList = ({ usernames }) => {
   return (
@@ -12,8 +12,23 @@ const GithubUserList = ({ usernames }) => {
           </li>
         ))}
       </ul>
+
+      
+      <Outlet />
+
+      
+      <RouteIndexMessage />
     </div>
   );
 };
 
 export default GithubUserList;
+
+
+const RouteIndexMessage = () => {
+  return (
+    <div>
+      <p>Add a user and select it</p>
+    </div>
+  );
+};
