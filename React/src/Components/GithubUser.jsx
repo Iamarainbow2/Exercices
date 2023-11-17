@@ -1,39 +1,27 @@
 
-import React, { useState, useEffect } from 'react';
-import useGithubUser from './useGithubUser';
+import React from 'react';
+import { useGithubUser } from './useGithubUser';
 
-const GithubUser = ({ username }) => {
-    const { userData, loading, error } = useGithubUser(username);
-  
-  
+const GithubUser = ({ match }) => {
+  const { username } = match.params;
+  const { userData, loading, error, refetch } = useGithubUser(username);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await fetch(`https://api.github.com/users/${username}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch Github user data');
-        }
-
-        const data = await response.json();
-        setUserData(data);
-        setLoading(false);
-      } catch (error) {
-        console.error(error);
-        setError('Failed to fetch Github user data');
-        setLoading(false);
-      }
-    };
-
-    fetchUserData();
-  }, [username]);
+  const handleRefetch = () => {
+    
+    refetch(username);
+  };
 
   if (loading) {
     return <p>Loading...</p>;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <div>
+        <p>{error}</p>
+        <button onClick={handleRefetch}>Try Again</button>
+      </div>
+    );
   }
 
   if (!userData) {
