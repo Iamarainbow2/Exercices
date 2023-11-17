@@ -4,8 +4,11 @@ import Welcome from './Components/Welcome';
 import Counter from './Components/Counter';
 import ShowGithubUser from './Components/ShowGithubUser';
 import NotFound from './NotFound';
+import GithubUserList from './Components/GithubUserList';
 
 const App = () => {
+  const githubUsernames = ['user1', 'user2', 'user3'];
+
   return (
    
     <div>
@@ -26,7 +29,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Welcome name="YourName" />} />
           <Route path="/counter" element={<Counter />} />
-          <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route
+            path="/users"
+            element={<GithubUserList usernames={githubUsernames} />}
+          />
+          <Route
+            path="/users/:username"
+            element={<ShowGithubUser />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
