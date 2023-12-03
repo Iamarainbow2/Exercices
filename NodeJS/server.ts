@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const pgp = require('pg-promise')();
 const app = express();
+const passport = require('./auth');
 const PORT = process.env.PORT || 3000;
 
 const dbConfig = 'postgres://bhlusude:uF7SeAjj1JG4H_pTG1CxuBShYAx5VBGS@berry.db.elephantsql.com/bhlusude';
@@ -11,6 +12,8 @@ const db = pgp(dbConfig);
 
 
 app.use(bodyParser.json());
+app.use(passport.initialize());
+
 
 
 const storage = multer.diskStorage({
@@ -27,7 +30,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-
 app.get('/planets', async (req, res) => {
   try {
     const planets = await db.any('SELECT * FROM planets');
@@ -37,6 +39,7 @@ app.get('/planets', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 app.get('/planets/:id', async (req, res) => {
   const { id } = req.params;
@@ -64,8 +67,6 @@ app.post('/planets/:id/image', upload.single('image'), async (req, res) => {
 });
 
 
-
-
 app.listen(PORT, () => {
-  console.log(`Server is running in port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
