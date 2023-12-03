@@ -1,6 +1,6 @@
-const crypto = require('crypto');
+import crypto from 'crypto';
 
-function randomID(num) {
+export default function randomID(num) {
     const generatedID = crypto.randomBytes(num).toString('hex');
     console.log(generatedID);  
     return generatedID;  
@@ -8,4 +8,3 @@ function randomID(num) {
 
 
 
-module.exports = randomID;
