@@ -1,4 +1,11 @@
 const crypto = require('crypto');
-Object.keys(crypto)
-const randomID = crypto.randomBytes(4).toString('hex');
-console.log(randomID);
+
+function randomID(num) {
+    const generatedID = crypto.randomBytes(num).toString('hex');
+    console.log(generatedID);  
+    return generatedID;  
+}
+
+
+
+module.exports = randomID;
