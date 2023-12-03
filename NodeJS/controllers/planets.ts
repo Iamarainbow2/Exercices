@@ -1,31 +1,21 @@
-const express = require('express');
-const router = express.Router();
-const Joi = require('joi');
+import { Request, Response } from 'express';
+
 
 let planets = [
   { id: 1, name: 'Earth' },
   { id: 2, name: 'Mars' },
 ];
 
-
-const planetSchema = Joi.object({
-  id: Joi.number().required(),
-  name: Joi.string().required(),
-});
-
-function validatePlanet(req, res, next) {
-  const { error } = planetSchema.validate(req.body);
-  if (error) {
-    return res.status(400).json({ error: error.details[0].message });
-  }
-  next();
+interface Planet {
+  id: number;
+  name: string;
 }
 
-router.get('/api/planets', (req, res) => {
+export const getAll = (req: Request, res: Response) => {
   res.json(planets);
-});
+};
 
-router.get('/api/planets/:id', (req, res) => {
+export const getOneById = (req: Request, res: Response) => {
   const planetId = parseInt(req.params.id);
   const planet = planets.find((p) => p.id === planetId);
 
@@ -34,15 +24,15 @@ router.get('/api/planets/:id', (req, res) => {
   }
 
   res.json(planet);
-});
+};
 
-router.post('/api/planets', validatePlanet, (req, res) => {
-  const newPlanet = req.body;
+export const create = (req: Request, res: Response) => {
+  const newPlanet: Planet = { ...req.body, id: planets.length + 1 };
   planets.push(newPlanet);
   res.status(201).json({ msg: 'Planet created successfully' });
-});
+};
 
-router.put('/api/planets/:id', validatePlanet, (req, res) => {
+export const updateById = (req: Request, res: Response) => {
   const planetId = parseInt(req.params.id);
   const updatedPlanet = req.body;
 
@@ -52,13 +42,13 @@ router.put('/api/planets/:id', validatePlanet, (req, res) => {
     return res.status(404).json({ error: 'Planet not found' });
   }
 
-
+ 
   existingPlanet.name = updatedPlanet.name;
 
   res.status(200).json({ msg: 'Planet updated successfully' });
-});
+};
 
-router.delete('/api/planets/:id', (req, res) => {
+export const deleteById = (req: Request, res: Response) => {
   const planetId = parseInt(req.params.id);
   const index = planets.findIndex((p) => p.id === planetId);
 
@@ -66,10 +56,8 @@ router.delete('/api/planets/:id', (req, res) => {
     return res.status(404).json({ error: 'Planet not found' });
   }
 
-
+  
   planets.splice(index, 1);
 
   res.status(200).json({ msg: 'Planet deleted successfully' });
-});
-
-module.exports = router;
+};

@@ -1,8 +1,8 @@
-const express = require('express');
-require('express-async-errors');
-const morgan = require('morgan');
-const dotenv = require('dotenv');
-const planetRouter = require('./planetRouter'); 
+import express from 'express';
+import 'express-async-errors';
+import morgan from 'morgan';
+import dotenv from 'dotenv';
+import { getAll, getOneById, create, updateById, deleteById } from './controllers/planets.ts';
 
 dotenv.config();
 
@@ -16,7 +16,11 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 
-app.use(planetRouter);
+app.get('/api/planets', getAll);
+app.get('/api/planets/:id', getOneById);
+app.post('/api/planets', create);
+app.put('/api/planets/:id', updateById);
+app.delete('/api/planets/:id', deleteById);
 
 
 app.use((req, res) => {
